@@ -9,7 +9,7 @@ Challenge project designed to test my understanding of the DOM, web API and how 
 *Javascript
 
 ## Website
-<!-- https://agent-shields.github.io/ -->
+https://agent-shields.github.io/Timed-Quiz/
 
 ## Screenshot
 This image is what I saw after entering that I wanted a 15 character password with lower case, upper case, numeric and special characters: 
