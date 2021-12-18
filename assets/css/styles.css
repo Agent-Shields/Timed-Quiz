@@ -1,4 +1,22 @@
+/* Global styles */
+* {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+/* Header styles */
 .headContainer {
     display:flex;
     justify-content: space-between;
 }
+
+/* Main Styles */
+.homeBanner {
+    display: flex;
+    flex-direction:column;
+    flex-wrap: wrap;
+    align-items:center;
+}
+
+/* .start-btn {
+    
+} */
