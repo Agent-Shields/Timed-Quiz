@@ -4,47 +4,47 @@ var startBtn = document.querySelector("#start-btn");
 
 //Create questions
 
-const Question1 = new Object();
-Question1.className = "homeBanner"
-Question1.prompt = document.createElement("h1");
-Question1.textContent = "test";
-Question1.answer1 = 'answer1';
-Question1.answer2 = 'answer2';
-Question1.answer3 = 'yeah';
-Question1.answer4 = 'no'
+// const Question1 = new Object();
+// Question1.className = "homeBanner"
+// Question1.prompt = document.createElement("h1");
+// Question1.textContent = "test";
+// Question1.answer1 = 'answer1';
+// Question1.answer2 = 'answer2';
+// Question1.answer3 = 'yeah';
+// Question1.answer4 = 'no'
 
-const Question2 = new Object();
-Question2.prompt = 'Question';
-Question2.answer1 = 'answer1';
-Question2.answer2 = 'answer2';
-Question2.answer3 = 'yeah';
-Question2.answer4 = 'no'
+// const Question2 = new Object();
+// Question2.prompt = 'Question';
+// Question2.answer1 = 'answer1';
+// Question2.answer2 = 'answer2';
+// Question2.answer3 = 'yeah';
+// Question2.answer4 = 'no'
 
-const Question3 = new Object();
-Question3.prompt = 'Question';
-Question3.answer1 = 'answer1';
-Question3.answer2 = 'answer2';
-Question3.answer3 = 'yeah';
-Question3.answer4 = 'no'
+// const Question3 = new Object();
+// Question3.prompt = 'Question';
+// Question3.answer1 = 'answer1';
+// Question3.answer2 = 'answer2';
+// Question3.answer3 = 'yeah';
+// Question3.answer4 = 'no'
 
-const Question4 = new Object();
-Question4.prompt = 'Question';
-Question4.answer1 = 'answer1';
-Question4.answer2 = 'answer2';
-Question4.answer3 = 'yeah';
-Question4.answer4 = 'no'
+// const Question4 = new Object();
+// Question4.prompt = 'Question';
+// Question4.answer1 = 'answer1';
+// Question4.answer2 = 'answer2';
+// Question4.answer3 = 'yeah';
+// Question4.answer4 = 'no'
 
-const Question5 = new Object();
-Question5.prompt = 'Question';
-Question5.answer1 = 'answer1';
-Question5.answer2 = 'answer2';
-Question5.answer3 = 'yeah';
-Question5.answer4 = 'no'
+// const Question5 = new Object();
+// Question5.prompt = 'Question';
+// Question5.answer1 = 'answer1';
+// Question5.answer2 = 'answer2';
+// Question5.answer3 = 'yeah';
+// Question5.answer4 = 'no'
 
-//Create questions array 
+// //Create questions array 
 
-var Questions = [Question1, Question2, Question3, Question4, Question5];
-console.log(Questions);
+// var Questions = [Question1, Question2, Question3, Question4, Question5];
+// console.log(Questions);
 
 // When start button clicked, start countdown function
 startBtn.addEventListener("click", function(){
@@ -77,8 +77,28 @@ startBtn.addEventListener("click", function(){
     //prompt question from questions array
     
     var firstQuestion = document.createElement("h1")
-    firstQuestion.textContent = "Test";
-    firstQuestion.className = "homeBanner"
+    firstQuestion.textContent = "Commonly used data types DO NOT include:";
+    firstQuestion.className = "homeBanner QuestionBtn"
     mainEl.appendChild(firstQuestion);
+
+    var firstQuestionBtnA = document.createElement("button")
+    firstQuestionBtnA.textContent = "1. Strings";
+    firstQuestionBtnA.className = "homeBanner questionBtn"
+    firstQuestion.appendChild(firstQuestionBtnA);
+
+    var firstQuestionBtnB = document.createElement("button")
+    firstQuestionBtnB.textContent = "2. Booleans";
+    firstQuestionBtnB.className = "homeBanner questionBtn"
+    firstQuestion.appendChild(firstQuestionBtnB);
+
+    var firstQuestionBtnC = document.createElement("button")
+    firstQuestionBtnC.textContent = "3. Alerts";
+    firstQuestionBtnC.className = "homeBanner questionBtn"
+    firstQuestion.appendChild(firstQuestionBtnC);
+
+    var firstQuestionBtnD = document.createElement("button")
+    firstQuestionBtnD.textContent = "4. Numbers";
+    firstQuestionBtnD.className = "homeBanner questionBtn"
+    firstQuestion.appendChild(firstQuestionBtnD);
 })
 
