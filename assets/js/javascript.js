@@ -66,15 +66,19 @@ startBtn.addEventListener("click", function(){
     var startCountdown = setInterval(countdown, 1000);
 })
 
+// instantiate main element as var
+var mainEl = document.querySelector("#mainEl")
+
 // When start button clicked, provide questions
 startBtn.addEventListener("click", function(){
     //instantiate homeBanner class div element as var, then remove
     var homeBanner = document.querySelector(".homeBanner")
     homeBanner.remove();
     //prompt question from questions array
+    
     var firstQuestion = document.createElement("h1")
     firstQuestion.textContent = "Test";
     firstQuestion.className = "homeBanner"
-    homeBanner.appendChild(firstQuestion);
+    mainEl.appendChild(firstQuestion);
 })
 
