@@ -35,7 +35,7 @@ function gameOver(){
     finalScore.appendChild(scoreEntryText);
 
     var scoreEntry = document.createElement("input")
-    scoreEntry.textContent = highScore;
+    // scoreEntry.textContent = "";
     scoreEntry.id = "scoreEntry"
     scoreEntry.className = "homeBanner";
     finalScore.appendChild(scoreEntry);
@@ -46,13 +46,11 @@ function gameOver(){
     scoreEntrySubmit.className = "homeBanner questionBtn";
     finalScore.appendChild(scoreEntrySubmit);
 
-    var scoreInput = document.querySelector("#scoreEntry")
-    console.log(scoreInput);
-
     var scoreSubmitButton = document.querySelector("#scoreSubmitBtn");
     scoreSubmitButton.addEventListener("click", function(){
-        console.log(scoreEntry.textContent);
-        
+        var userInitial = document.getElementById("scoreEntry").value;
+        console.log(userInitial);
+        localStorage.setItem("highScore", userInitial + " - " + curScore);
     })
 
 }
