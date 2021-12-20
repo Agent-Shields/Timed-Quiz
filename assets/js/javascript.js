@@ -11,9 +11,12 @@ var curScore = 0;
 // instantiate high score count
 var highScore = 0;
 
-// define end game function
-function gameEnd(){
-    console.log("done");
+// define game over function
+function gameOver(){
+    let element = document.getElementById("mainEl");
+    while (element.firstChild) {
+      element.removeChild(element.firstChild);
+    }
 }
 
 // When start button clicked, start countdown function
@@ -29,6 +32,9 @@ startBtn.addEventListener("click", function(){
             clearInterval(startCountdown);
         };
         timeDisplay.innerHTML = "Time Remaining : " + quizTimer;
+        if (quizTimer === 0){
+            gameOver();
+        }
     }
     //decrement interval
     var startCountdown = setInterval(countdown, 1000);
@@ -219,7 +225,7 @@ startBtn.addEventListener("click", function(){
                                 console.log("Correct!");
                                 curScore += 10;
                                 fifthQuestion.remove();
-
+                                gameOver();
                             })
 
                         })
