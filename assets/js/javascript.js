@@ -81,10 +81,11 @@ function gameOver(){
           }
         var highScoreHeader = document.createElement("h1");
         highScoreHeader.className = "homeBanner";
-        highScoreHeader.textContent = "Your High Score is : "
+        highScoreHeader.textContent = "Your High Score is : ";
         mainEl.appendChild(highScoreHeader);
         var highScoreValue = document.createElement("p");
         highScoreValue.textContent = highScore;
+        highScoreValue.className = "homeBanner";
         highScoreHeader.appendChild(highScoreValue);
         var returnStart = document.createElement("button")
         returnStart.className = "homeBanner questionBtn";
