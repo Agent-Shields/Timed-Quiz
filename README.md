@@ -12,7 +12,7 @@ Challenge project designed to test my understanding of the DOM, web API and how 
 https://agent-shields.github.io/Timed-Quiz/
 
 ## Screenshot
-This image is what I saw after entering that I wanted a 15 character password with lower case, upper case, numeric and special characters: 
+This image is what you should see when the page initially loads, once you press start button you will start the quiz within which you have 75 seconds to answer 5 questions. 
 ![image](assets/images/QuizProof.PNG)
 
 
