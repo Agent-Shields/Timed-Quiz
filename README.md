@@ -13,7 +13,7 @@ https://agent-shields.github.io/Timed-Quiz/
 
 ## Screenshot
 This image is what I saw after entering that I wanted a 15 character password with lower case, upper case, numeric and special characters: 
-<!-- ![image](RandomPassProof.jpg) -->
+![image](assets/images/QuizProof.PNG)
 
 
 ## Contribution
