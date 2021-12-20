@@ -9,7 +9,7 @@ var quizTimer = 75;
 var curScore = 0;
 
 // instantiate high score count
-var highScore = 0;
+var highScore = localStorage.highScore;
 
 // define game over function
 function gameOver(){
@@ -51,6 +51,26 @@ function gameOver(){
         var userInitial = document.getElementById("scoreEntry").value;
         console.log(userInitial);
         localStorage.setItem("highScore", userInitial + " - " + curScore);
+        while (element.firstChild) {
+            element.removeChild(element.firstChild);
+          }
+        var highScoreHeader = document.createElement("h1");
+        highScoreHeader.className = "homeBanner";
+        highScoreHeader.textContent = "Your High Score is : "
+        mainEl.appendChild(highScoreHeader);
+        var highScoreValue = document.createElement("p");
+        highScoreValue.textContent = highScore;
+        highScoreHeader.appendChild(highScoreValue);
+        var returnStart = document.createElement("button")
+        returnStart.className = "homeBanner questionBtn";
+        returnStart.id = "returnStartBtn"
+        returnStart.textContent = "Play again?";
+        highScoreValue.appendChild(returnStart);
+        var returnStartBtn = document.querySelector("#returnStartBtn")
+        returnStartBtn.addEventListener("click", function(){
+            console.log("returnStartBtn clicked!")
+            document.location.reload();
+        })
     })
 
 }
