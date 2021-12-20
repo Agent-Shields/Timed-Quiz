@@ -2,54 +2,17 @@
 var startBtn = document.querySelector("#start-btn");
 // console.log(startBtn);
 
-//Create questions
+//instantiate countdown timer
+var quizTimer = 75;
 
-// const Question1 = new Object();
-// Question1.className = "homeBanner"
-// Question1.prompt = document.createElement("h1");
-// Question1.textContent = "test";
-// Question1.answer1 = 'answer1';
-// Question1.answer2 = 'answer2';
-// Question1.answer3 = 'yeah';
-// Question1.answer4 = 'no'
+//instantiate current score count
+var curScore = 0;
 
-// const Question2 = new Object();
-// Question2.prompt = 'Question';
-// Question2.answer1 = 'answer1';
-// Question2.answer2 = 'answer2';
-// Question2.answer3 = 'yeah';
-// Question2.answer4 = 'no'
-
-// const Question3 = new Object();
-// Question3.prompt = 'Question';
-// Question3.answer1 = 'answer1';
-// Question3.answer2 = 'answer2';
-// Question3.answer3 = 'yeah';
-// Question3.answer4 = 'no'
-
-// const Question4 = new Object();
-// Question4.prompt = 'Question';
-// Question4.answer1 = 'answer1';
-// Question4.answer2 = 'answer2';
-// Question4.answer3 = 'yeah';
-// Question4.answer4 = 'no'
-
-// const Question5 = new Object();
-// Question5.prompt = 'Question';
-// Question5.answer1 = 'answer1';
-// Question5.answer2 = 'answer2';
-// Question5.answer3 = 'yeah';
-// Question5.answer4 = 'no'
-
-// //Create questions array 
-
-// var Questions = [Question1, Question2, Question3, Question4, Question5];
-// console.log(Questions);
+// instantiate high score count
+var highScore = 0;
 
 // When start button clicked, start countdown function
 startBtn.addEventListener("click", function(){
-    //instantiate countdown timer
-    var quizTimer = 75;
 
     //quiz timer countdown function
     var countdown = function(){
@@ -74,31 +37,212 @@ startBtn.addEventListener("click", function(){
     //instantiate homeBanner class div element as var, then remove
     var homeBanner = document.querySelector(".homeBanner")
     homeBanner.remove();
-    //prompt question from questions array
+    
+    //prompt questions
     
     var firstQuestion = document.createElement("h1")
     firstQuestion.textContent = "Commonly used data types DO NOT include:";
-    firstQuestion.className = "homeBanner QuestionBtn"
+    firstQuestion.className = "homeBanner"
     mainEl.appendChild(firstQuestion);
 
     var firstQuestionBtnA = document.createElement("button")
     firstQuestionBtnA.textContent = "1. Strings";
     firstQuestionBtnA.className = "homeBanner questionBtn"
     firstQuestion.appendChild(firstQuestionBtnA);
+    firstQuestionBtnA.addEventListener("click", function(){
+        quizTimer -= 10;
+    })
 
     var firstQuestionBtnB = document.createElement("button")
     firstQuestionBtnB.textContent = "2. Booleans";
     firstQuestionBtnB.className = "homeBanner questionBtn"
     firstQuestion.appendChild(firstQuestionBtnB);
+    firstQuestionBtnB.addEventListener("click", function(){
+        quizTimer -= 10;
+    })
 
     var firstQuestionBtnC = document.createElement("button")
     firstQuestionBtnC.textContent = "3. Alerts";
     firstQuestionBtnC.className = "homeBanner questionBtn"
     firstQuestion.appendChild(firstQuestionBtnC);
+    firstQuestionBtnC.addEventListener("click", function(){
+        console.log("Correct!")
+        firstQuestion.remove();
+
+        // Prompt question 2 
+    
+        var secondQuestion = document.createElement("h1")
+        secondQuestion.textContent = "The condition in an if / else statement is enclosed with  _____:";
+        secondQuestion.className = "homeBanner"
+        mainEl.appendChild(secondQuestion);
+
+        var secondQuestionBtnA = document.createElement("button")
+        secondQuestionBtnA.textContent = "1. Quotes";
+        secondQuestionBtnA.className = "homeBanner questionBtn"
+        secondQuestion.appendChild(secondQuestionBtnA);
+        secondQuestionBtnA.addEventListener("click", function(){
+            quizTimer -= 10;
+        })
+
+        var secondQuestionBtnB = document.createElement("button")
+        secondQuestionBtnB.textContent = "2. Curly brackets";
+        secondQuestionBtnB.className = "homeBanner questionBtn"
+        secondQuestion.appendChild(secondQuestionBtnB);
+        secondQuestionBtnB.addEventListener("click", function(){
+            quizTimer -= 10;
+        })
+
+        var secondQuestionBtnC = document.createElement("button")
+        secondQuestionBtnC.textContent = "3. Parenthesis";
+        secondQuestionBtnC.className = "homeBanner questionBtn"
+        secondQuestion.appendChild(secondQuestionBtnC);
+        secondQuestionBtnC.addEventListener("click", function(){
+            console.log("Correct!")
+            secondQuestion.remove();
+
+            //Prompt Question 3 
+    
+                var thirdQuestion = document.createElement("h1")
+                thirdQuestion.textContent = "Arrays in JavaScript can be used to store _____:";
+                thirdQuestion.className = "homeBanner"
+                mainEl.appendChild(thirdQuestion);
+
+                var thirdQuestionBtnA = document.createElement("button")
+                thirdQuestionBtnA.textContent = "1. Numbers and strings";
+                thirdQuestionBtnA.className = "homeBanner questionBtn"
+                thirdQuestion.appendChild(thirdQuestionBtnA);
+                thirdQuestionBtnA.addEventListener("click", function(){
+                    quizTimer -= 10;
+                })
+
+                var thirdQuestionBtnB = document.createElement("button")
+                thirdQuestionBtnB.textContent = "2. Other arrays";
+                thirdQuestionBtnB.className = "homeBanner questionBtn"
+                thirdQuestion.appendChild(thirdQuestionBtnB);
+                thirdQuestionBtnB.addEventListener("click", function(){
+                    quizTimer -= 10;
+                })
+
+                var thirdQuestionBtnC = document.createElement("button")
+                thirdQuestionBtnC.textContent = "3. Booleans";
+                thirdQuestionBtnC.className = "homeBanner questionBtn"
+                thirdQuestion.appendChild(thirdQuestionBtnC);
+                thirdQuestionBtnC.addEventListener("click", function(){
+                    quizTimer -= 10;
+                })
+
+                var thirdQuestionBtnD = document.createElement("button")
+                thirdQuestionBtnD.textContent = "4. All of the above";
+                thirdQuestionBtnD.className = "homeBanner questionBtn"
+                thirdQuestion.appendChild(thirdQuestionBtnD);
+                thirdQuestionBtnD.addEventListener("click", function(){
+                    console.log("Correct!")
+                    thirdQuestion.remove();
+                    
+                    //Prompt Question 4 
+    
+                        var fourthQuestion = document.createElement("h1")
+                        fourthQuestion.textContent = "String values must be enclosed within _____ when being assigned to variables";
+                        fourthQuestion.className = "homeBanner"
+                        mainEl.appendChild(fourthQuestion);
+
+                        var fourthQuestionBtnA = document.createElement("button")
+                        fourthQuestionBtnA.textContent = "1. Commas";
+                        fourthQuestionBtnA.className = "homeBanner questionBtn"
+                        fourthQuestion.appendChild(fourthQuestionBtnA);
+                        fourthQuestionBtnA.addEventListener("click", function(){
+                            quizTimer -= 10;
+                        })
+
+                        var fourthQuestionBtnB = document.createElement("button")
+                        fourthQuestionBtnB.textContent = "2. Curly brackets";
+                        fourthQuestionBtnB.className = "homeBanner questionBtn"
+                        fourthQuestion.appendChild(fourthQuestionBtnB);
+                        fourthQuestionBtnB.addEventListener("click", function(){
+                            quizTimer -= 10;
+                        })
+
+                        var fourthQuestionBtnC = document.createElement("button")
+                        fourthQuestionBtnC.textContent = "3. Quotes";
+                        fourthQuestionBtnC.className = "homeBanner questionBtn"
+                        fourthQuestion.appendChild(fourthQuestionBtnC);
+                        fourthQuestionBtnC.addEventListener("click", function(){
+                            console.log("Correct!")
+                            fourthQuestion.remove();
+
+                                //Prompt Question 5
+        
+                            var fifthQuestion = document.createElement("h1")
+                            fifthQuestion.textContent = "A very useful tool used during development and debugging for printing content to the debugger is:";
+                            fifthQuestion.className = "homeBanner"
+                            mainEl.appendChild(fifthQuestion);
+
+                            var fifthQuestionBtnA = document.createElement("button")
+                            fifthQuestionBtnA.textContent = "1. JavaScript";
+                            fifthQuestionBtnA.className = "homeBanner questionBtn"
+                            fifthQuestion.appendChild(fifthQuestionBtnA);
+                            fifthQuestionBtnA.addEventListener("click", function(){
+                                quizTimer -= 10;
+                            })
+
+                            var fifthQuestionBtnB = document.createElement("button")
+                            fifthQuestionBtnB.textContent = "2. Terminal/bash";
+                            fifthQuestionBtnB.className = "homeBanner questionBtn"
+                            fifthQuestion.appendChild(fifthQuestionBtnB);
+                            fifthQuestionBtnB.addEventListener("click", function(){
+                                quizTimer -= 10;
+                            })
+
+                            var fifthQuestionBtnC = document.createElement("button")
+                            fifthQuestionBtnC.textContent = "3. For loops";
+                            fifthQuestionBtnC.className = "homeBanner questionBtn"
+                            fifthQuestion.appendChild(fifthQuestionBtnC);
+                            fifthQuestionBtnC.addEventListener("click", function(){
+                                quizTimer -= 10;
+                            })
+
+                            var fifthQuestionBtnD = document.createElement("button")
+                            fifthQuestionBtnD.textContent = "4. Console.log";
+                            fifthQuestionBtnD.className = "homeBanner questionBtn"
+                            fifthQuestion.appendChild(fifthQuestionBtnD);
+                            fifthQuestionBtnD.addEventListener("click", function(){
+                                console.log("Correct!")
+                                fifthQuestion.remove();
+
+                            })
+
+                        })
+
+                        var fourthQuestionBtnD = document.createElement("button")
+                        fourthQuestionBtnD.textContent = "4. Parenthesis";
+                        fourthQuestionBtnD.className = "homeBanner questionBtn"
+                        fourthQuestion.appendChild(fourthQuestionBtnD);
+                        fourthQuestionBtnD.addEventListener("click", function(){
+                            quizTimer -= 10;
+
+                        })
+
+                })
+        })
+
+        var secondQuestionBtnD = document.createElement("button")
+        secondQuestionBtnD.textContent = "4. Square brackets";
+        secondQuestionBtnD.className = "homeBanner questionBtn"
+        secondQuestion.appendChild(secondQuestionBtnD);
+        secondQuestionBtnD.addEventListener("click", function(){
+            quizTimer -= 10;
+
+        })
+
+    })
 
     var firstQuestionBtnD = document.createElement("button")
     firstQuestionBtnD.textContent = "4. Numbers";
     firstQuestionBtnD.className = "homeBanner questionBtn"
     firstQuestion.appendChild(firstQuestionBtnD);
+    firstQuestionBtnD.addEventListener("click", function(){
+        quizTimer -= 10;
+    })
+
 })
 
