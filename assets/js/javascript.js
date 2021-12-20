@@ -13,10 +13,22 @@ var highScore = 0;
 
 // define game over function
 function gameOver(){
+    //clear children of mainEl 
     let element = document.getElementById("mainEl");
     while (element.firstChild) {
       element.removeChild(element.firstChild);
     }
+    //add game over values
+    var allDone = document.createElement("h1");
+    allDone.textContent = "All done!";
+    allDone.className = "homeBanner";
+    mainEl.appendChild(allDone);
+
+    var finalScore = document.createElement("p");
+    finalScore.textContent ="Your final score is " + curScore + ".";
+    finalScore.className = "homeBanner";
+    allDone.appendChild(finalScore);
+
 }
 
 // When start button clicked, start countdown function
@@ -32,8 +44,9 @@ startBtn.addEventListener("click", function(){
             clearInterval(startCountdown);
         };
         timeDisplay.innerHTML = "Time Remaining : " + quizTimer;
-        if (quizTimer === 0){
+        if (quizTimer < 0){
             gameOver();
+            quizTimer = 1;
         }
     }
     //decrement interval
