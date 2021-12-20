@@ -11,6 +11,31 @@ var curScore = 0;
 // instantiate high score count
 var highScore = localStorage.highScore;
 
+// display high scores when upper left button clicked
+var highScoreHome = document.querySelector("#highScoresHome");
+    highScoreHome.addEventListener("click", function (){
+    let element = document.getElementById("mainEl");
+    while (element.firstChild) {
+        element.removeChild(element.firstChild);
+      }
+    var displayHighScore = document.createElement("h1");
+    displayHighScore.textContent = "Your highest score is " + highScore;
+    displayHighScore.className = "homeBanner";
+    mainEl.appendChild(displayHighScore);
+    var returnStart = document.createElement("button")
+        returnStart.className = "homeBanner questionBtn";
+        returnStart.id = "returnStartBtn"
+        returnStart.textContent = "Play again?";
+        displayHighScore.appendChild(returnStart);
+        var returnStartBtn = document.querySelector("#returnStartBtn")
+        returnStartBtn.addEventListener("click", function(){
+            console.log("returnStartBtn clicked!")
+            document.location.reload();
+        })
+    
+
+})
+
 // define game over function
 function gameOver(){
     //clear children of mainEl 

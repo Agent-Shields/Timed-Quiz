@@ -29,3 +29,8 @@
     color: white;
     border-radius: 7px;
 }
+
+.highScoreBtn {
+    background-color: white;
+    color: black;
+}
