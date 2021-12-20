@@ -19,4 +19,13 @@
 
 .questionBtn {
     margin: 1vw;
+    background-color: rgb(4, 10, 97) ;
+    color: white;
+    border-radius: 7px;
+}
+
+.start-btn {
+    background-color: rgb(4, 10, 97) ;
+    color: white;
+    border-radius: 7px;
 }
