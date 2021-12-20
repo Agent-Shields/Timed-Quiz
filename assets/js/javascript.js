@@ -29,6 +29,21 @@ function gameOver(){
     finalScore.className = "homeBanner";
     allDone.appendChild(finalScore);
 
+    var scoreEntryText = document.createElement("p");
+    scoreEntryText.textContent = "Enter Initials : ";
+    scoreEntryText.className = "homeBanner";
+    finalScore.appendChild(scoreEntryText);
+
+    var scoreEntry = document.createElement("input")
+    scoreEntry.textContent = highScore;
+    scoreEntry.className = "homeBanner";
+    finalScore.appendChild(scoreEntry);
+
+    var scoreEntrySubmit = document.createElement("Button");
+    scoreEntrySubmit.textContent = "Submit";
+    scoreEntrySubmit.className = "homeBanner questionBtn";
+    finalScore.appendChild(scoreEntrySubmit);
+
 }
 
 // When start button clicked, start countdown function
@@ -44,9 +59,8 @@ startBtn.addEventListener("click", function(){
             clearInterval(startCountdown);
         };
         timeDisplay.innerHTML = "Time Remaining : " + quizTimer;
-        if (quizTimer < 0){
+        if (quizTimer <= 0){
             gameOver();
-            quizTimer = 1;
         }
     }
     //decrement interval
