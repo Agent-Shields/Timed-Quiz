@@ -41,8 +41,15 @@ function gameOver(){
 
     var scoreEntrySubmit = document.createElement("Button");
     scoreEntrySubmit.textContent = "Submit";
+    scoreEntrySubmit.id = "scoreSubmitBtn"
     scoreEntrySubmit.className = "homeBanner questionBtn";
     finalScore.appendChild(scoreEntrySubmit);
+
+    var scoreSubmitButton = document.querySelector("#scoreSubmitBtn");
+    scoreSubmitButton.addEventListener("click", function(){
+        console.log(scoreEntry.textContent);
+    })
+
 
 }
 
@@ -252,6 +259,7 @@ startBtn.addEventListener("click", function(){
                                 console.log("Correct!");
                                 curScore += 10;
                                 fifthQuestion.remove();
+                                quizTimer = 1;
                                 gameOver();
                             })
 
